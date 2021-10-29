@@ -1,2 +1,2 @@
 # minimal-dot
-Minimalist .NET Framework for WebApplication
+Minimalist .NET Framework for WebApplications
