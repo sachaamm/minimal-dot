@@ -51,7 +51,7 @@ namespace ConsoleApp1
                 Debug.Log(">>> <b>" + urlBase + "</b>");
             }
             
-            var prefixConfig = new MyPrefixesConfig(urlBases, DeterminesRoutesToAttachFromReflection());
+            MyPrefixesConfig prefixConfig = new MyPrefixesConfig(urlBases, DeterminesRoutesToAttachFromReflection());
             
             InitListener(prefixConfig);
         }
@@ -154,9 +154,11 @@ namespace ConsoleApp1
         #endregion
         
         
-        private async void ListenerCallback (IAsyncResult result)
+        private async void ListenerCaawllback (IAsyncResult result)
         {				
-            HttpListenerContext context = listener.EndGetContext (result);		
+            HttpListenerContext context = listener.EndGetContext (result);
+
+            HttpListenerRequest request = context.Request;
 
             Debug.Log ("Method: " + context.Request.HttpMethod);
             Debug.Log ("LocalUrl: " + context.Request.Url.LocalPath);
